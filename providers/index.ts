@@ -5,10 +5,10 @@ export default class YourDriverProvider {
 
   public async boot() {
     const Ally = this.app.container.resolveBinding('Adonis/Addons/Ally')
-    const { YourDriver } = await import('../src/YourDriver')
+    const { Deezer } = await import('../src/Deezer')
 
-    Ally.extend('yourdriver', (_, __, config, ctx) => {
-      return new YourDriver(ctx, config)
+    Ally.extend('Deezer', (_, __, config, ctx) => {
+      return new Deezer(ctx, config)
     })
   }
 }
